@@ -1,8 +1,8 @@
 # AirBnB_clone
 First app
 
-# How start the application
+# 1. How start the application
 
-# How to use the application
+# 2. How to use the application
 
-# Examples
+# 3. Examples
