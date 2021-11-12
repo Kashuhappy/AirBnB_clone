@@ -35,4 +35,3 @@ class BaseModel:
         else:
             id = str(uuid.uuid4)
             created_at = datetime.now()
-        return __dict__
