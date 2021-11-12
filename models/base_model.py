@@ -25,3 +25,14 @@ class BaseModel:
         _dict['created_at'] = _dict['created_at'].isoformat('%Y-%m-%dT%H:%M:%S.%f')
         _dict['updated_at'] = _dict['updated_at'].isoformat('%Y-%m-%dT%H:%M:%S.%f')
         return _dict
+
+    def __init__(self, *args, **kwags):
+        if key, value in **kwags:
+            _dict['__class__'] = self.__name__
+            _dict['created_at'] = _dict['created_at'].isoformat('%Y-%m-%dT%H:%M:%S.%f')
+            _dict['updated_at'] =  _dict['updated_at'].isoformat('%Y-%m-%dT%H:%M:%S.%f')
+
+        else:
+            id = str(uuid.uuid4)
+            created_at = datetime.now()
+        return __dict__
