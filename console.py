@@ -7,7 +7,8 @@ import cmd
 from model.base_model import BaseModel
 from models import storage
 
-class HBNHCommand( cmd.Cmd):
+
+class HBNHCommand(cmd.Cmd):
     """ AirBnB command line interpreter """
     prompt = "hbnb"
     valid_classes = {'BaseModel' = BaseModel, 'User' = User, 'City' = City
