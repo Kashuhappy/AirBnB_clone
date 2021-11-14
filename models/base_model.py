@@ -6,11 +6,10 @@ from uuid import uuid4
 from datetime import date, datetime
 import models
 
-
 class BaseModel:
     """Creating class BaseModel """
     id = str(uuid.uuid4())
-
+    
     created_at = datetime.now()
     updated_at = datetime.now()
 
@@ -24,19 +23,17 @@ class BaseModel:
     def to_dict(self):
         _dict = self.__dict__
         _dict['__class__ '] = self.__name__
-        _dict['created_at'] = _dict['created_at'].isoformat()
-        _dict['updated_at'] = _dict['updated_at'].isofomat()
+        _dict['created_at'] = _dict['created_at'].isoformat('%Y-%m-%dT%H:%M:%S.%f')
+        _dict['updated_at'] = _dict['updated_at'].isoformat('%Y-%m-%dT%H:%M:%S.%f')
         return _dict
 
     def __init__(self, *args, **kwags):
         if kwags:
             for key, value in kwargs.items():
                 if key == "created_at":
-                    self.created_at = datetime.strptime(
-                            kwags["created_at", "%Y-%m-%dT%H:%M:%S.%f"])
+                    self.created_at = datetime.strptime(kwags["created_at", "%Y-%m-%dT%H:%M:%S.%f"])
                 elif key == "updated_at":
-                    self.updated_at = datetime.strptime(
-                            kwags["updated_at", "%Y-%m-%dT%H:%M:%S.%f"])
+                    self.updated_at = datetime.strptime(kwags["updated_at", "%Y-%m-%dT%H:%M:%S.%f"])
                 elif key == "__class__":
                     continue
                 else:
@@ -47,3 +44,4 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
+            
