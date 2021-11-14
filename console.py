@@ -6,6 +6,12 @@ Console to the Module
 import cmd
 from model.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.city import City
+from models.review import Review
+from models.amenity import Amenity
+from models.state import State
+from models.place import Place
 
 
 class HBNHCommand(cmd.Cmd):
