@@ -1,9 +1,9 @@
 header {
-    background-color: white;
+    color: white;
     height: 70px;
     width: 100%;
-    border-bottom: 1px solid#CCCCCC;
-}
-#header_logo {
-    
+    border-bottom: 1px solid #CCCCCC;
+    background-position: 20px  20%;
+    background-image: url(../images/logo.png);
+    backgroud-repeat: no-repeat;
 }
